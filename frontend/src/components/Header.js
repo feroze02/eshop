@@ -61,6 +61,10 @@ const Header = () => {
                   </LinkContainer>
                 </NavDropdown>
               )}
+
+                <LinkContainer to='/contact'>
+                  <Nav.Link><i className= 'fas fa-address-book'></i> CONTACT</Nav.Link>
+                </LinkContainer>
                 </Nav>
                 </Navbar.Collapse>
             </Container>
