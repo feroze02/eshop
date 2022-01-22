@@ -181,4 +181,5 @@ const ProductEditScreen = ({ match, history }) => {
     </>
   )
 }
+
 export default ProductEditScreen

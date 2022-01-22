@@ -102,20 +102,6 @@ import {
             : error.message,
       })
     }
-    
-    // catch (error) {
-    //   const message =
-    //     error.response && error.response.data.message
-    //       ? error.response.data.message
-    //       : error.message
-    //   if (message === 'Not authorized, token failed') {
-    //     dispatch(logout())
-    //   }
-    //   dispatch({
-    //     type: PRODUCT_DELETE_FAIL,
-    //     payload: message,
-    //   })
-    // }
   }
 
   export const createProduct = () => async (dispatch, getState) => {
@@ -149,20 +135,6 @@ import {
             : error.message,
       })
     }
-    
-    // catch (error) {
-    //   const message =
-    //     error.response && error.response.data.message
-    //       ? error.response.data.message
-    //       : error.message
-    //   if (message === 'Not authorized, token failed') {
-    //     dispatch(logout())
-    //   }
-    //   dispatch({
-    //     type: PRODUCT_CREATE_FAIL,
-    //     payload: message,
-    //   })
-    // }
   }
   
   export const updateProduct = (product) => async (dispatch, getState) => {
@@ -192,7 +164,7 @@ import {
         type: PRODUCT_UPDATE_SUCCESS,
         payload: data,
       })
-      // dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data })
+      
     } catch (error) {
       dispatch({
         type: PRODUCT_UPDATE_FAIL,
@@ -202,20 +174,6 @@ import {
             : error.message,
       })
     }
-    
-    // catch (error) {
-    //   const message =
-    //     error.response && error.response.data.message
-    //       ? error.response.data.message
-    //       : error.message
-    //   if (message === 'Not authorized, token failed') {
-    //     dispatch(logout())
-    //   }
-    //   dispatch({
-    //     type: PRODUCT_UPDATE_FAIL,
-    //     payload: message,
-    //   })
-    // }
   }
 
 
@@ -253,20 +211,6 @@ import {
             : error.message,
       })
     }
-    
-    // catch (error) {
-    //   const message =
-    //     error.response && error.response.data.message
-    //       ? error.response.data.message
-    //       : error.message
-    //   if (message === 'Not authorized, token failed') {
-    //     dispatch(logout())
-    //   }
-    //   dispatch({
-    //     type: PRODUCT_CREATE_REVIEW_FAIL,
-    //     payload: message,
-    //   })
-    // }
   }
 
 
@@ -290,3 +234,4 @@ import {
       })
     }
   }
+  

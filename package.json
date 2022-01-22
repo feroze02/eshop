@@ -1,5 +1,5 @@
 {
-  "name": "nshop",
+  "name": "eshop",
   "version": "1.0.0",
   "description": "MERN shopping cart app",
   "main": "server.js",
@@ -31,3 +31,4 @@
     "nodemon": "^2.0.15"
   }
 }
+

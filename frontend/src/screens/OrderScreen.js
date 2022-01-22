@@ -77,38 +77,6 @@ const OrderScreen = ({ match, history }) => {
     }, [dispatch, orderId, successPay, successDeliver, order])
 
 
-
-
-//   useEffect(() => {
-//     if (!userInfo) {
-//       history.push('/login')
-//     }
-
-//     const addPayPalScript = async () => {
-//       const { data: clientId } = await axios.get('/api/config/paypal')
-//       const script = document.createElement('script')
-//       script.type = 'text/javascript'
-//       script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`
-//       script.async = true
-//       script.onload = () => {
-//         setSdkReady(true)
-//       }
-//       document.body.appendChild(script)
-//     }
-
-//     if (!order || successPay || successDeliver || order._id !== orderId) {
-//       dispatch({ type: ORDER_PAY_RESET })
-//       dispatch({ type: ORDER_DELIVER_RESET })
-//       dispatch(getOrderDetails(orderId))
-//     } else if (!order.isPaid) {
-//       if (!window.paypal) {
-//         addPayPalScript()
-//       } else {
-//         setSdkReady(true)
-//       }
-//     }
-//   }, [dispatch, orderId, successPay, successDeliver, order])
-
   const successPaymentHandler = (paymentResult) => {
     console.log(paymentResult)
     dispatch(payOrder(orderId, paymentResult))
@@ -188,7 +156,7 @@ const OrderScreen = ({ match, history }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                          {item.qty} x £{item.price} = £{item.qty * item.price}
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -207,25 +175,25 @@ const OrderScreen = ({ match, history }) => {
               <ListGroup.Item>
                 <Row>
                   <Col>Items</Col>
-                  <Col>${order.itemsPrice}</Col>
+                  <Col>£{order.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Shipping</Col>
-                  <Col>${order.shippingPrice}</Col>
+                  <Col>£{order.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Tax</Col>
-                  <Col>${order.taxPrice}</Col>
+                  <Col>£{order.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Total</Col>
-                  <Col>${order.totalPrice}</Col>
+                  <Col>£{order.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
               {!order.isPaid && (

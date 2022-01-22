@@ -28,7 +28,6 @@ const { userInfo } = userLogin
   const productReviewCreate = useSelector((state) => state.productReviewCreate)
   const {
     success: successProductReview,
-    // loading: loadingProductReview,
     error: errorProductReview,
   } = productReviewCreate
 
@@ -96,7 +95,7 @@ const { userInfo } = userLogin
                         </Col>
                         <Col>
                         <strong>
-                            ${product.price}
+                            £{product.price}
                         </strong>
                         </Col>
                     </Row>
@@ -167,7 +166,6 @@ const { userInfo } = userLogin
               Review submitted successfully
             </Message>
           )}
-          {/* {loadingProductReview && <Loader />} */}
           {errorProductReview && (
             <Message variant='danger'>{errorProductReview}</Message>
           )}
@@ -198,7 +196,6 @@ const { userInfo } = userLogin
                 ></Form.Control>
               </Form.Group>
               <Button
-                // disabled={loadingProductReview}
                 type='submit'
                 variant='primary'
                 className= 'mt-3'

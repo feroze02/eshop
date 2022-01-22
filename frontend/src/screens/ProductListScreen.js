@@ -43,12 +43,6 @@ const ProductListScreen = ({ history, match }) => {
   useEffect(() => {
     dispatch({ type: PRODUCT_CREATE_RESET })
 
-    // if (userInfo && userInfo.isAdmin) {
-    //     dispatch(listProducts())
-    // } else{
-    //     history.push('/login')
-    // }
-
     if (!userInfo.isAdmin) {
       history.push('/login')
     }
@@ -59,31 +53,6 @@ const ProductListScreen = ({ history, match }) => {
       dispatch(listProducts('', pageNumber))
     }
   }, [ dispatch, history, userInfo, successDelete, successCreate, createdProduct, pageNumber ])
-
-
-
-  
-//   useEffect(() => {
-//     dispatch({ type: PRODUCT_CREATE_RESET })
-
-//     if (!userInfo || !userInfo.isAdmin) {
-//       history.push('/login')
-//     }
-
-//     if (successCreate) {
-//       history.push(`/admin/product/${createdProduct._id}/edit`)
-//     } else {
-//       dispatch(listProducts('', pageNumber))
-//     }
-//   }, [
-//     dispatch,
-//     history,
-//     userInfo,
-//     successDelete,
-//     successCreate,
-//     createdProduct,
-//     pageNumber,
-//   ])
 
   const deleteHandler = (id) => {
     if (window.confirm('Are you sure')) {
@@ -133,7 +102,7 @@ const ProductListScreen = ({ history, match }) => {
                 <tr key={product._id}>
                   <td>{product._id}</td>
                   <td>{product.name}</td>
-                  <td>${product.price}</td>
+                  <td>£{product.price}</td>
                   <td>{product.category}</td>
                   <td>{product.brand}</td>
                   <td>
