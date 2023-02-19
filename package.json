@@ -1,6 +1,7 @@
 {
   "name": "eshop",
   "version": "1.0.0",
+  "homepage": "https://eshop-blond-three.vercel.app/",
   "description": "MERN shopping cart app",
   "main": "server.js",
   "type": "module",
